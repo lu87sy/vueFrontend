@@ -2,7 +2,7 @@
     <div class="wrapper">
         <swiper :options="swiperOption">
             <!-- slides -->
-            <swiper-slide v-for="item of headerImg" :key="item.id">
+            <swiper-slide v-for="item of swiperList" :key="item.id">
                 <img class="swiper-img" :src="item.imgUrl">
             </swiper-slide>
             <!-- Optional controls -->
@@ -16,7 +16,7 @@ export default {
     name: 'HomeSwiper',
     data() {
         return {
-            headerImg: [
+            swiperList: [
                 {
                     id: '001',
                     imgUrl: require('@/assets/img/nueva.jpg')

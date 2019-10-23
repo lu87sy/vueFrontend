@@ -2,6 +2,7 @@
   <div class="home">
     <home-header class="home-header"/>
     <home-swiper/>
+    <home-catalog/>
   </div>
 </template>
 
@@ -9,12 +10,14 @@
 // @ is an alias to /src
 import HomeHeader from '@/components/HomeHeader'
 import HomeSwiper from '@/components/HomeSwiper'
+import HomeCatalog from '@/components/HomeCatalog'
 
 export default {
     name: 'Home',
     components: {
         HomeHeader,
-        HomeSwiper
+        HomeSwiper,
+        HomeCatalog
     }
 }
 </script>
