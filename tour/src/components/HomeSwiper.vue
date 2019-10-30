@@ -14,18 +14,11 @@
 <script>
 export default {
     name: 'HomeSwiper',
+    props: {
+        swiperList: Array
+    },
     data() {
         return {
-            swiperList: [
-                {
-                    id: '001',
-                    imgUrl: require('@/assets/img/nueva.jpg')
-                },
-                {
-                    id: '002',
-                    imgUrl: require('@/assets/img/zt1.jpg')
-                }
-            ],
             swiperOption: {
                 pagination: {
                     el: '.swiper-pagination'

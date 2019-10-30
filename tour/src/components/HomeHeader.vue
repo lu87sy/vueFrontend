@@ -8,7 +8,7 @@
             上海海昌海洋公园
         </div>
         <div class="header-city" :class="[showCity]">
-            北京
+            {{this.city}}
             <span class="iconfont">&#xe65d;</span>
         </div>
     </div>
@@ -17,6 +17,7 @@
 <script>
 export default {
     name: 'HomeHeader',
+    props: ['city'],
     data() {
         return {
             showHeader: '',

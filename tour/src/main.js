@@ -13,6 +13,7 @@ Vue.config.productionTip = false
 faskClick.attach(document.body)
 Vue.use(VueAwesomeSwiper)
 
+
 new Vue({
   router,
   render: h => h(App)

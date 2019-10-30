@@ -26,51 +26,12 @@
 <script>
 export default {
     name: 'HomeGuess',
+    props: {
+        guessList: Array
+    },
     data() {
         return {
             guessDescChange: '',
-            guessList: [
-                {
-                    id: '2254856',
-                    imgUrl: 'https://pic3.40017.cn/zzy/rimage/2016/01/14/17/ToLHVj_420x228_00.jpg',
-                    rank: '1176点评.98%满意度',
-                    desc: '常州西太湖明都国际会议中心1晚，自选常州淹城/美食套餐',
-                    distance: '5.79',
-                    prise: '280'
-                },
-                {
-                    id: '2254854',
-                    imgUrl: 'https://pic3.40017.cn/zzy/rimage/2016/01/14/17/ToLHVj_420x228_00.jpg',
-                    rank: '1176点评.98%满意度',
-                    desc: '常州西太湖明都国际会议中心1晚，自选常州淹城/美食套餐',
-                    distance: '5.79',
-                    prise: '280'
-                },
-                {
-                    id: '2254857',
-                    imgUrl: 'https://pic3.40017.cn/zzy/rimage/2016/01/14/17/ToLHVj_420x228_00.jpg',
-                    rank: '1176点评.98%满意度',
-                    desc: '常州西太湖明都国际会议中心1晚，自选常州淹城/美食套餐',
-                    distance: '5.79',
-                    prise: '280'
-                },
-                {
-                    id: '2254855',
-                    imgUrl: 'https://pic3.40017.cn/zzy/rimage/2016/01/14/17/ToLHVj_420x228_00.jpg',
-                    rank: '1176点评.98%满意度',
-                    desc: '常州西太湖明都国际会议中心1晚，自选常州淹城/美食套餐',
-                    distance: '5.79',
-                    prise: '280'
-                },
-                {
-                    id: '2254859',
-                    imgUrl: 'https://pic3.40017.cn/zzy/rimage/2016/01/14/17/ToLHVj_420x228_00.jpg',
-                    rank: '1176点评.98%满意度',
-                    desc: '常州西太湖明都国际会议中心1晚，自选常州淹城/美食套餐',
-                    distance: '5.79',
-                    prise: '280'
-                }
-            ]
         }
     },
     methods: {

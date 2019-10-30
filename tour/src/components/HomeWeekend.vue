@@ -8,7 +8,7 @@
         </div>
         <div class="week-swiper">
             <swiper :options="swiperOption">
-                <swiper-slide v-for="item of weekendSwiper" :key="item.id">
+                <swiper-slide v-for="item of weekendList" :key="item.id">
                     <div class="weekSwiper-item">
                         <div class="weekSwiper-item-img">
                             <img :src="item.imgUrl">
@@ -27,34 +27,11 @@
 <script>
 export default {
     name: 'HomeWeekend',
+    props: {
+        weekendList: Array
+    },
     data() {
         return {
-            weekendSwiper: [
-                {
-                    id: '2225852',
-                    imgUrl: 'https://pic5.40017.cn/03/000/8c/da/rB5oQFwZtfyABsmlAABcBH79wXs668_280x190_00.jpg',
-                    desc: '拈花湾',
-                    detail: '禅意假日 古韵风光'
-                },
-                {
-                    id: '2225851',
-                    imgUrl: 'https://pic5.40017.cn/01/000/00/9c/rBANC1vD9_GAb2qVAAD1zTnOfl0327_280x190_00.jpg',
-                    desc: '拈花湾',
-                    detail: '禅意假日 古韵风光'
-                },
-                {
-                    id: '2225858',
-                    imgUrl: 'https://pic5.40017.cn/01/000/00/9c/rBANC1vD9_GAb2qVAAD1zTnOfl0327_280x190_00.jpg',
-                    desc: '拈花湾',
-                    detail: '禅意假日 古韵风光'
-                },
-                {
-                    id: '2225857',
-                    imgUrl: 'https://pic5.40017.cn/01/000/00/9c/rBANC1vD9_GAb2qVAAD1zTnOfl0327_280x190_00.jpg',
-                    desc: '拈花湾',
-                    detail: '禅意假日 古韵风光'
-                }
-            ],
             swiperOption: {
                 freeMode: true,
                 spaceBetween: 20,

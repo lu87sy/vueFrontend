@@ -39,38 +39,11 @@
 <script>
 export default {
     name: 'HomeHot',
-    data() {
-      return {
-        hotContentList: [
-          {
-            id: '000001',
-            imgUrl: 'https://pic3.40017.cn/zzy/rimage/2016/01/14/17/ToLHVj_100x100_00.jpg',
-            desc: '【周末不涨价】西太湖明都国际会议中心豪华双床间1晚+双人自助晚餐+欢迎水果、安睡奶+儿童乐园、乒乓球室、台球室'
-          }
-        ],
-        hotPriseList: [
-          {
-            id: '0000001',
-            num: '200',
-            prise: '280'
-          }
-        ],
-        hotTrendList: [
-          {
-            id: '00000001',
-            desc: '快乐寒假',
-            crite: '亲子旅行记',
-            imgUrl: 'https://pic5.40017.cn/03/000/da/e4/rB5oQFwcf9GAM_o-AACKptfbYxE196_100x100_00.png'
-          },
-          {
-            id: '00000002',
-            desc: '温泉爆款',
-            crite: '又到一年温泉季',
-            imgUrl: 'https://pic5.40017.cn/03/000/da/e4/rB5oQFwcf9GAM_o-AACKptfbYxE196_100x100_00.png'
-          }
-        ]
-      }
-    },
+    props: {
+      hotTrendList: Array,
+      hotPriseList: Array,
+      hotContentList: Array
+    }
 }
 </script>
 

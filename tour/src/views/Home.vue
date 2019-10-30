@@ -1,16 +1,17 @@
 <template>
   <div class="home">
-    <home-header class="home-header"/>
-    <home-swiper/>
-    <home-catalog/>
-    <home-hot/>
-    <home-weekend/>
-    <home-guess/>
+    <home-header class="home-header" :city="city" />
+    <home-swiper :swiperList="swiperList" />
+    <home-catalog :iconList="iconList" />
+    <home-hot :hotPriseList="hotPriseList" :hotTrendList="hotTrendList" :hotContentList="hotContentList" />
+    <home-weekend :weekendList="weekendList" />
+    <home-guess :guessList="guessList" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
+import axios from 'axios'
 import HomeHeader from '@/components/HomeHeader'
 import HomeSwiper from '@/components/HomeSwiper'
 import HomeCatalog from '@/components/HomeCatalog'
@@ -27,7 +28,43 @@ export default {
         HomeHot,
         HomeWeekend,
         HomeGuess
-    }
+    },
+    data() {
+      return {
+        city: '',
+        guessList: [],
+        hotPriseList: [],
+        hotTrendList: [],
+        hotContentList: [],
+        iconList: [],
+        swiperList: [],
+        weekendList: []
+      }
+    },
+    methods: {
+      getHomeData(){
+        axios.get("/api/index")
+          .then(this.getHomeDataSucc)
+      },
+      getHomeDataSucc(res){
+        // console.log(res)
+        res = res.data
+        if(res.data){
+          const data = res.data
+          this.city = data.city
+          this.guessList = data.guessList
+          this.hotPriseList = data.hotPriseList
+          this.hotTrendList = data.hotTrendList
+          this.hotContentList = data.hotContentList
+          this.iconList = data.iconList
+          this.swiperList = data.swiperList
+          this.weekendList = data.weekendList
+        }
+      }
+    },
+    mounted() {
+      this.getHomeData()
+    },
 }
 </script>
 
