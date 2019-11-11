@@ -1,6 +1,6 @@
 <template>
     <div class="search">
-        <span class="iconfont">&#xe688</span>
+        <span class="iconfont">&#xe688;</span>
         <input type="text" class="search-input" placeholder="请输入城市名（如北京、bj、beijing）">
     </div>
 </template>
