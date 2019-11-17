@@ -1,5 +1,10 @@
 const mockIndexData = require("./public/mock/index.json");
 module.exports = {
+    configureWebpack: {
+        externals: {
+            "BMap": "BMap"
+        }
+    },
     devServer: {
         // proxy: {
         //     '/api': {
