@@ -2,7 +2,7 @@
     <div class="list" ref="wrapper">
         <div>
             <div class="present-area">
-                <div class="present-title">当前</div>
+                <div class="present-title" ref="present">当前</div>
                 <div class="present-button">{{this.city}}</div>
             </div>
             <div class="hot-area">
@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div class="alph-area">
-                <div class="alph-wrapper" v-for="(item,key) of cities" :key="key">
+                <div class="alph-wrapper" v-for="(item,key) of cities" :key="key" :ref="key">
                     <div class="alph-title">{{key}}</div>
                     <div class="alph-list">
                         <div class="alph-button border-bottom" v-for="innerItem of item" :key="innerItem.id">{{innerItem.name}}</div>
@@ -28,6 +28,21 @@ import BScroll from 'better-scroll'
 import BMap from 'BMap'
 export default {
     name: 'locationList',
+    props: {
+        letter: String
+    },
+    watch: {
+        letter(){
+            const elementLetter = this.$refs[this.letter]
+            const elementPresent = this.$refs.present
+            if(elementLetter){
+                const element = elementLetter[0]
+                this.scroll.scrollToElement(element)
+            }else{
+                this.scroll.scrollToElement(elementPresent)
+            }
+        }
+    },
     data() {
         return {
             city: '',
@@ -75,6 +90,18 @@ export default {
                         id: "0021258",
                         name: "安庆"
                     },
+                    {
+                        id: "0021259",
+                        name: "安庆"
+                    },
+                    {
+                        id: "0021260",
+                        name: "安庆"
+                    },
+                    {
+                        id: "0021261",
+                        name: "安庆"
+                    },
                 ],
                 "B": [
                     {
@@ -97,12 +124,46 @@ export default {
                         id: "0022258",
                         name: "北京"
                     },
+                    {
+                        id: "0022259",
+                        name: "北京"
+                    },
+                    {
+                        id: "0022260",
+                        name: "北京"
+                    },
                 ],
+                "C": [
+                    {
+                        id: "0033252",
+                        name: "重庆"
+                    },
+                    {
+                        id: "0033253",
+                        name: "重庆"
+                    },
+                    {
+                        id: "0033254",
+                        name: "重庆"
+                    },
+                    {
+                        id: "0033255",
+                        name: "重庆"
+                    },
+                    {
+                        id: "0033256",
+                        name: "重庆"
+                    },
+                    {
+                        id: "0033257",
+                        name: "重庆"
+                    }
+                ]
             }
         }
     },
     mounted() {
-        const scroll = new BScroll(this.$refs.wrapper, {
+        this.scroll = new BScroll(this.$refs.wrapper, {
             click:true,
             mouseWheel: {
                 speed: 20,
